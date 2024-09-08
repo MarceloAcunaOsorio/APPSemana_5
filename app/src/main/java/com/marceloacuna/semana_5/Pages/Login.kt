@@ -29,6 +29,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
@@ -99,29 +100,39 @@ fun LoginScreen(onLoginSuccess: () -> Unit, onNavigateToRegister: () -> Unit) {
             } else {
                 errorMessage = "Invalid email or password"
             }
-        }) {
+        }
+            ,shape = RoundedCornerShape(16.dp),
+            modifier = Modifier.size(width = 280.dp, height = 40.dp)) {
 
-            androidx.compose.material3.Text(
-                text = "Login",
-                modifier = Modifier.height(30.dp).width(200.dp),
-                textAlign = TextAlign.Center
-            )
+
+            Text("Inicio de Sesión",
+                style = TextStyle(
+                    fontSize = 20.sp, // Tamaño de fuente
+                    fontWeight = FontWeight.Bold // Peso de la fuente)
+                ))}
+        Spacer(modifier = Modifier.height(8.dp))
+        if (errorMessage.isNotEmpty()) {
+            Text(text = errorMessage, color = Color.Red)
         }
 
         Spacer(modifier = Modifier.height(8.dp))
 
         TextButton(
             onClick = onNavigateToRegister)
-        { Text("Registrarse") }
+        {
+            Text("Registrarse",
+            style = TextStyle(
+                fontSize = 20.sp, // Tamaño de fuente
+                fontWeight = FontWeight.Bold // Peso de la fuente
+            )
+            )}
 
         //recuperar contraseña
         androidx.compose.material3.Text(
             text = "Recuperar Contraseña?",
             modifier = Modifier.clickable {/*codigo que realiza la accion*/ },fontSize = 20.sp)
 
-        if (errorMessage.isNotEmpty()) {
-            Text(text = errorMessage, color = Color.Red)
-        }
+
 
 
         //salto de linea

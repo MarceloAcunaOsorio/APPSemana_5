@@ -13,10 +13,12 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.Button
+import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.OutlinedTextField
 import androidx.compose.material.Text
 import androidx.compose.material.TextButton
+import androidx.compose.material3.ButtonDefaults.shape
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -26,6 +28,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
@@ -71,7 +74,7 @@ fun RegisterScreen(onRegisterSuccess: () -> Unit) {
         OutlinedTextField(
             value = fullName,
             onValueChange = { fullName = it },
-            label = { Text("Full Name") },
+            label = { Text("Nombre Completo") },
             modifier = Modifier.size(width = 380.dp, height = 60.dp),
             shape = RoundedCornerShape(40)
         )
@@ -92,7 +95,7 @@ fun RegisterScreen(onRegisterSuccess: () -> Unit) {
         OutlinedTextField(
             value = password,
             onValueChange = { password = it },
-            label = { Text("Password") },
+            label = { Text("Contraseña") },
             visualTransformation = PasswordVisualTransformation(),
             modifier = Modifier.size(width = 380.dp, height = 60.dp),
             shape = RoundedCornerShape(40)
@@ -103,7 +106,7 @@ fun RegisterScreen(onRegisterSuccess: () -> Unit) {
         OutlinedTextField(
             value = confirmPassword,
             onValueChange = { confirmPassword = it },
-            label = { Text("Confirm Password") },
+            label = { Text("Confirmar Contraseña") },
             visualTransformation = PasswordVisualTransformation(),
             modifier = Modifier.size(width = 380.dp, height = 60.dp),
             shape = RoundedCornerShape(40)
@@ -114,7 +117,7 @@ fun RegisterScreen(onRegisterSuccess: () -> Unit) {
         OutlinedTextField(
             value = fechaNac,
             onValueChange = { fechaNac = it },
-            label = { Text("Birth Date (YYYY-MM-DD)") },
+            label = { Text("Fecha Nacimiento (YYYY-MM-DD)") },
             keyboardOptions = KeyboardOptions.Default.copy(keyboardType = KeyboardType.Text),
             modifier = Modifier.size(width = 380.dp, height = 60.dp),
             shape = RoundedCornerShape(40)
@@ -125,14 +128,15 @@ fun RegisterScreen(onRegisterSuccess: () -> Unit) {
         OutlinedTextField(
             value = address,
             onValueChange = { address = it },
-            label = { Text("Address") },
+            label = { Text("Dirección") },
             modifier = Modifier.size(width = 380.dp, height = 60.dp),
             shape = RoundedCornerShape(40)
         )
 
-        Spacer(modifier = Modifier.height(10.dp))
+        Spacer(modifier = Modifier.height(20.dp))
 
         Button(onClick = {
+
             val birthDateParsed = try {
                 LocalDate.parse(fechaNac)
             } catch (e: Exception) {
@@ -155,8 +159,14 @@ fun RegisterScreen(onRegisterSuccess: () -> Unit) {
                     onRegisterSuccess()
                 }
             }
-        }) {
-            Text("Registrarse")
+        },shape = RoundedCornerShape(16.dp),
+            modifier = Modifier.size(width = 280.dp, height = 40.dp)
+        ) {
+            Text("Registrarse",
+                style = TextStyle(
+                    fontSize = 20.sp, // Tamaño de fuente
+                    fontWeight = FontWeight.Bold // Peso de la fuente //
+         ))
         }
 
         Spacer(modifier = Modifier.height(8.dp))
@@ -168,8 +178,13 @@ fun RegisterScreen(onRegisterSuccess: () -> Unit) {
 
         //volver al login
         TextButton(
-            onClick = onRegisterSuccess)
-        { Text("Volver al Login") }
+            onClick = onRegisterSuccess
+            )
+        { Text("Volver al Login"
+        ,  style = TextStyle(
+                fontSize = 20.sp, // Tamaño de fuente
+                fontWeight = FontWeight.Bold // Peso de la fuente
+            ))}
 
     }
 }
