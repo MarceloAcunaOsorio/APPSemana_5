@@ -82,7 +82,7 @@ fun HomeScreen(onNavigateToLogin: () -> Unit) {
 
                 DropdownMenuItem(
                     text = { androidx.compose.material3.Text(text = "Cerrar Sesión") },
-                    onClick = { onNavigateToLogin })
+                    onClick =  onNavigateToLogin )
             }
         }
     )
