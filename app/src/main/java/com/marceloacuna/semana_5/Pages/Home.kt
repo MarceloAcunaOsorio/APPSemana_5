@@ -72,7 +72,7 @@ fun HomeScreen(onNavigateToLogin: () -> Unit) {
                 onDismissRequest = { showMenu = false }
             ) {
                 DropdownMenuItem(
-                    text = { androidx.compose.material3.Text(text = "Crear Receta") },
+                    text = { androidx.compose.material3.Text(text = "Crear Letra") },
                     onClick = {
                         Toast.makeText(
                             context, "Crear Receta",

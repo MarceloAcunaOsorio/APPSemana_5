@@ -32,6 +32,6 @@ val abecedario = listOf(
         id = 3,
         nombre = "letra C",
         descripcion = "",
-        R.drawable.icono_mano
+        R.drawable.letra_c
     )
 )
