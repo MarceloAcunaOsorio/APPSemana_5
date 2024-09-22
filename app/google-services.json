@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "614184080402",
+    "firebase_url": "https://semana-7-6c127-default-rtdb.firebaseio.com",
+    "project_id": "semana-7-6c127",
+    "storage_bucket": "semana-7-6c127.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:614184080402:android:5707db49257abf83fef4cb",
+        "android_client_info": {
+          "package_name": "com.marceloacuna.myappsemana7"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCaXl-lUADkHjYWXZxiLjjzfemjaVELPqQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:614184080402:android:0b6b28301d595fa7fef4cb",
+        "android_client_info": {
+          "package_name": "com.marceloacuna.semana_5.Pages"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCaXl-lUADkHjYWXZxiLjjzfemjaVELPqQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -49,7 +49,7 @@ import com.marceloacuna.semana_5.ui.theme.Semana_5Theme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun HomeScreen(onNavigateToLogin: () -> Unit) {
+fun HomeScreen(onNavigateToLogin: () -> Unit, onNavigateCreaLetra:() -> Unit) {
     AllAbecedario(platList = abecedario)
     var showMenu by remember { mutableStateOf(false) }
     var context = LocalContext.current
@@ -73,12 +73,7 @@ fun HomeScreen(onNavigateToLogin: () -> Unit) {
             ) {
                 DropdownMenuItem(
                     text = { androidx.compose.material3.Text(text = "Crear Letra") },
-                    onClick = {
-                        Toast.makeText(
-                            context, "Crear Receta",
-                            Toast.LENGTH_SHORT
-                        ).show()
-                    })
+                    onClick = onNavigateCreaLetra)
 
                 DropdownMenuItem(
                     text = { androidx.compose.material3.Text(text = "Cerrar Sesión") },
