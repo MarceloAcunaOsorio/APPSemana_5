@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
     id("com.google.gms.google-services")
+    id("org.jetbrains.kotlin.plugin.serialization") version "1.8.10"
 }
 
 android {
@@ -85,4 +86,6 @@ dependencies {
     implementation ("androidx.navigation:navigation-compose:2.6.0")
 
     implementation(platform("com.google.firebase:firebase-bom:33.3.0"))
+
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1")
 }

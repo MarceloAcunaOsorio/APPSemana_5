@@ -8,6 +8,8 @@ import com.marceloacuna.semana_5.Pages.RegisterScreen
 import com.marceloacuna.semana_5.ui.theme.Semana_5Theme
 
 class MainActivity : ComponentActivity() {
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()

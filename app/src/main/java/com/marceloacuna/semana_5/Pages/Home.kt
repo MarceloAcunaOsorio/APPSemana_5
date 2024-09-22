@@ -1,6 +1,8 @@
 package com.marceloacuna.semana_5.Pages
 
+import android.content.ContentValues.TAG
 import android.content.res.Configuration
+import android.util.Log
 import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
@@ -42,6 +44,13 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.google.firebase.Firebase
+import com.google.firebase.database.ChildEventListener
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
+import com.google.firebase.database.database
 import com.marceloacuna.semana_5.Model.Model_Abecedario
 import com.marceloacuna.semana_5.ui.theme.Semana_5Theme
 
@@ -50,8 +59,14 @@ import com.marceloacuna.semana_5.ui.theme.Semana_5Theme
 @Composable
 fun HomeScreen(onNavigateToLogin: () -> Unit, onNavigateCreaLetra:() -> Unit) {
 
+
     var showMenu by remember { mutableStateOf(false) }
     var context = LocalContext.current
+
+    val database = FirebaseDatabase.getInstance()
+    val ref = database.getReference("model_abecedario")
+
+
 
     TopAppBar(
         title = { androidx.compose.material3.Text(text = "My App") },
@@ -83,6 +98,9 @@ fun HomeScreen(onNavigateToLogin: () -> Unit, onNavigateCreaLetra:() -> Unit) {
     )
 
 }
+
+
+
 
 /*//crea listado de la lista abecedario
 @Composable
