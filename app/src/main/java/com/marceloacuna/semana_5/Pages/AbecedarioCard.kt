@@ -18,7 +18,6 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.marceloacuna.semana_5.Model.abecedario
 import com.marceloacuna.semana_5.ui.theme.Semana_5Theme
 
 @Composable
@@ -64,7 +63,7 @@ fun AbecedarioCard (nombre: String, descripcion: String, imagen: Int){
     }
 }
 
-
+/*
 @Preview(uiMode = Configuration.UI_MODE_NIGHT_NO, showBackground = true, name = "Light mode")
 @Preview(uiMode = Configuration.UI_MODE_NIGHT_YES, showBackground = true, name = "Dark mode")
 
@@ -74,3 +73,4 @@ fun ResetListaAbecedarioPreview(){
         AbecedarioCard(nombre = abecedario[2].nombre, descripcion = abecedario[2].descripcion, imagen = abecedario[2].imgen)
     }
 }
+*/

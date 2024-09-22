@@ -1,5 +1,6 @@
 package com.marceloacuna.semana_5.Pages
 
+import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -28,6 +29,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -35,11 +37,14 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.google.firebase.database.FirebaseDatabase
+import com.marceloacuna.semana_5.Model.Model_Abecedario
 import com.marceloacuna.semana_5.Model.User
 import com.marceloacuna.semana_5.Model.UserDatabase
 import com.marceloacuna.semana_5.R
 import java.text.DateFormat
 import java.time.LocalDate
+
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -49,6 +54,10 @@ fun CrearLetraScreen(onNavigateHome: () -> Unit) {
     var descripcion by remember { mutableStateOf("") }
     var imagen by remember { mutableStateOf("") }
     var errorMessage by remember { mutableStateOf("") }
+    var context = LocalContext.current
+
+
+
 
     Column(modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
@@ -102,6 +111,24 @@ fun CrearLetraScreen(onNavigateHome: () -> Unit) {
                 imagen == "" -> errorMessage = "Password no debe quedar vacio"
 
                 else -> {
+                    val database = FirebaseDatabase.getInstance()
+                    val ref = database.getReference("model_abecedario")
+
+                    val model_abecedario = Model_Abecedario(
+                        nombre = nombreLetra,
+                        descripcion = descripcion,
+                        imgen = imagen
+                    )
+                    ref.push().setValue(model_abecedario).addOnCompleteListener{task ->
+                        if(task.isSuccessful)
+                        {
+                            Toast.makeText(context, "Letra creada", Toast.LENGTH_SHORT).show()
+                        }
+                        else
+                        {
+                            Toast.makeText(context, "Error al crear letra", Toast.LENGTH_SHORT).show()
+                        }
+                    }
 
                 }
             }

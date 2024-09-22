@@ -27,6 +27,25 @@
     },
     {
       "client_info": {
+        "mobilesdk_app_id": "1:614184080402:android:5cef70efb73d6dfcfef4cb",
+        "android_client_info": {
+          "package_name": "com.marceloacuna.semana_5"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCaXl-lUADkHjYWXZxiLjjzfemjaVELPqQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:614184080402:android:0b6b28301d595fa7fef4cb",
         "android_client_info": {
           "package_name": "com.marceloacuna.semana_5.Pages"

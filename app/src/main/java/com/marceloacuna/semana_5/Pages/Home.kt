@@ -43,19 +43,19 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.marceloacuna.semana_5.Model.Model_Abecedario
-import com.marceloacuna.semana_5.Model.abecedario
 import com.marceloacuna.semana_5.ui.theme.Semana_5Theme
 
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreen(onNavigateToLogin: () -> Unit, onNavigateCreaLetra:() -> Unit) {
-    AllAbecedario(platList = abecedario)
+
     var showMenu by remember { mutableStateOf(false) }
     var context = LocalContext.current
 
     TopAppBar(
         title = { androidx.compose.material3.Text(text = "My App") },
+        colors = TopAppBarDefaults.topAppBarColors(Color.Cyan),
 
         actions = {
 
@@ -84,7 +84,7 @@ fun HomeScreen(onNavigateToLogin: () -> Unit, onNavigateCreaLetra:() -> Unit) {
 
 }
 
-//crea listado de la lista abecedario
+/*//crea listado de la lista abecedario
 @Composable
 fun AllAbecedario(platList: List<Model_Abecedario>){
     LazyColumn(
@@ -110,7 +110,7 @@ fun AllAbecedario(platList: List<Model_Abecedario>){
         }
     }
 }
-
+*/
 
 
 

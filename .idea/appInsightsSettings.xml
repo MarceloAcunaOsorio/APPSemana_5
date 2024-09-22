@@ -23,10 +23,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.marceloacuna.semana_5" />
+                  <option name="mobileSdkAppId" value="1:614184080402:android:5cef70efb73d6dfcfef4cb" />
+                  <option name="projectId" value="semana-7-6c127" />
+                  <option name="projectNumber" value="614184080402" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />
